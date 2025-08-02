@@ -1,4 +1,4 @@
-/*FunÁ„o recursiva de soma dos n primeiros numero naturais*/
+/*Fun√ßao recursiva de soma dos n primeiros numero naturais*/
 #include<stdio.h>
 
 int soma_naturais(int n){
@@ -6,7 +6,7 @@ int soma_naturais(int n){
     if(n == 1){
         return 1;
     }else{
-        total = n + soma_naturais(n-1);
+        total = n + soma_naturais(n-1); //busca o numero anterior at√© o 1 e vai somando at√© chegar no fim das chamadas
     }
 }
 

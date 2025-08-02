@@ -1,12 +1,12 @@
-/*FunÁ„o recursiva de fatorial*/
+/*Fun√ßao recursiva de fatorial*/
 #include <stdio.h>
 
 int fatorial(int n){
     int fat;
-    if(n == 1 || n == 0){
+    if(n == 1 || n == 0){ //o fatorial de 0 e 1 e o mesmo, 1
         return 1;
     }else{
-        fat = n * fatorial(n-1);
+        fat = n * fatorial(n-1); //√© chamado o fatorial do numero anterior at√© chegar 1
     }
 return fat;
 }

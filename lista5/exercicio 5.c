@@ -1,18 +1,17 @@
-/*Função recursiva para verificar se é primo*/
-
+/*FunÃ§Ã£o recursiva para verificar se e primo*/
 #include <stdio.h>
 
-int calc_primo(int n, int divsr){
-    if(n <= 2) return (n == 2);
-    if(n == divsr) return 1;
-    if(n % divsr == 0){
+int calc_primo(int n, int divisor){
+    if(n <= 2) return (n == 2); //se o numero for menor que dois nÃ£o Ã© primo
+    if(n == divisor) return 1; //parada quando paddar por todos os numeros 
+    if(n % divisor == 0){ //caso algum numero anterior seja divisor ja nao Ã© primo
         return 0;
     }else{
-        calc_primo(n, divsr + 1);
+        calc_primo(n, divisor + 1); //chama para o proximo numero 
     }
 }
 int primo(int n){
-    return calc_primo(n, 2);
+    return calc_primo(n, 2); //chama o inicio do calculo com o menor primo 
 }
 
 int main(){
@@ -23,7 +22,7 @@ int main(){
     if(primo(num))
         printf("e primo");
     else
-        printf("não e primo");
+        printf("nao e primo");
 
 return 0;
 }
