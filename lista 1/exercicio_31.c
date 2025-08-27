@@ -16,10 +16,11 @@ int main(){
 
     maior = *ponteiro[0];
     for(i=1;i<STR_SIZE;i++){
-            printf("%d \t",ponteiro[i]);
+            printf("%d \t", *ponteiro[i]);
         if(maior < *ponteiro[i]);
         maior = *ponteiro[i];
     }
     printf("\n%d", maior);
 return 0;
 }
+
