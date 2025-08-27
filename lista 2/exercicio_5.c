@@ -11,15 +11,14 @@ void print_matriz(int matriz[LIN_SIZE][COL_SIZE]);
 int main(){
     int matriz[LIN_SIZE][COL_SIZE], resposta[COL_SIZE][LIN_SIZE];
 
-    printf("a matriz é");
+    printf("a matriz Ã©");
     cria_matriz_rand(matriz);
     print_matriz(matriz);
     printf("a matriz transposta e");
 
-    for(int i=0;i<2;i++){
-        for(int j=0;j<2;j++){
-            resposta[i][j] = 0;
-            resposta[i][j] += matriz[j][i];
+    for(int i=0;i<LIN_SIZE;i++){
+        for(int j=0;j<COL_SIZE;j++){
+            resposta[j][i] = matriz[i][j];
         }
     }
 
@@ -27,7 +26,7 @@ int main(){
     for(int i=0;i<COL_SIZE;i++){
             printf("\n");
         for(int j=0;j<LIN_SIZE;j++){
-            printf (" %d", matriz[i][j]);
+            printf (" %d", resposta[i][j]);
         }
     }
      printf("\n\n");
