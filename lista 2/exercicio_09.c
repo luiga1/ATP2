@@ -23,7 +23,7 @@ int main(){
         }
     }
 
-    printf("o maior numero da matriz é %d",maior);
+    printf("o maior numero da matriz Ã© %d",maior);
 
 return 0;
 }
