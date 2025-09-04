@@ -1,4 +1,4 @@
-/*verifique se duas matrizes 2x2 s„o iguais.*/
+/*verifique se duas matrizes 2x2 s√£o iguais.*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
