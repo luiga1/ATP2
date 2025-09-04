@@ -1,5 +1,5 @@
 /*verifique se uma matriz 3x3 e simetrica.*/
-// matriz simetrica tranposta é igual a normal
+// matriz simetrica tranposta Ã© igual a normal
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
