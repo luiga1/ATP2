@@ -5,28 +5,43 @@
 #define COL_SIZE 3
 #define LIN_SIZE 3
 
-void cria_matriz_rand(int matriz[LIN_SIZE][COL_SIZE]);
-void print_matriz(int matriz[LIN_SIZE][COL_SIZE]);
+void cria_matriz_rand(int** matriz);
+void print_matriz(int** matriz);
 
 int main(){
-    int matriz[LIN_SIZE][COL_SIZE],
-    linha_copy[LIN_SIZE];
+    int **matriz,
+    **linha_copy;
 
-    cria_matriz_rand(matriz[LIN_SIZE][COL_SIZE]);
-     print_matriz(matriz[LIN_SIZE][COL_SIZE]);
+    matriz = malloc(sizeof(int*)*LIN_SIZE);
+    for(int i=0;i<COL_SIZE;i++){
+        *(matriz + i) = malloc(sizeof(int)*COL_SIZE);
+    }
 
-    for(int i=0;i<LIN_SIZE;i++){
+    linha_copy = malloc(sizeof(int*)*LIN_SIZE);
+    for(int i=0;i<COL_SIZE;i++){
+        *(linha_copy + i) = malloc(sizeof(int)*COL_SIZE);
+    }
+
+    cria_matriz_rand(matriz);
+    print_matriz(matriz);
+
+    for(int i=0;i<COL_SIZE;i++){
         linha_copy[i] = matriz[0][i];
         matriz[0][i] = matriz[1][i];
         matriz[1][i] = linha_copy[i];
     }
-    printf("a matriz trocada é ");
-    print_matriz(matriz[LIN_SIZE][COL_SIZE]);
+
+    printf("a matriz trocada Ã© ");
+    print_matriz(matriz);
+
+    for(int i=0;i<COL_SIZE;i++) free(*(matriz +i));
+    free(matriz);
+    free(linha_copy);
 
 return 0;
 }
 
-void cria_matriz_rand(int matriz[LIN_SIZE][COL_SIZE]){
+void cria_matriz_rand(int** matriz){
     srand(time(0));
     for(int i=0;i<LIN_SIZE;i++){
         for(int j=0;j<COL_SIZE;j++){
@@ -35,7 +50,7 @@ void cria_matriz_rand(int matriz[LIN_SIZE][COL_SIZE]){
     }
 }
 
-void print_matriz(int matriz[LIN_SIZE][COL_SIZE]){
+void print_matriz(int** matriz){
     printf("\n");
     for(int i=0;i<LIN_SIZE;i++){
             printf("\n");
