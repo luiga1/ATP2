@@ -19,3 +19,5 @@ return 0;
 }
 
 // linha passa  soma o elemento da coluna e pula pra proxima linha
+
+// terminar
