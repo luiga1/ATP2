@@ -16,8 +16,7 @@ int main(){
 
     matriz = aloca_matriz(LIN_SIZE, COL_SIZE,matriz);
     somas = malloc(sizeof(int)*4);
-
-
+    cria_matriz_rand(LIN_SIZE,COL_SIZE,matriz);
 
     for(int i=0;i<4;i++){
         somas[i] = soma_coluna(LIN_SIZE,i, matriz);
@@ -26,6 +25,9 @@ int main(){
     for(int i=0; i<4;i++){
         printf("a coluna %d vale %d\n",i+1,somas[i]);
     }
+
+    for(int i=0;i<COL_SIZE;i++) free(matriz[i]);
+    free(matriz);
 
 return 0;
 }
