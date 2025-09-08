@@ -10,7 +10,7 @@ void print_matriz(int matriz[LIN_SIZE][COL_SIZE]);
 
 int main(){
     int matriz[LIN_SIZE][COL_SIZE];
-     media;
+    float media;
 
     printf("A matriz e ");
     cria_matriz_rand(matriz);
@@ -23,7 +23,7 @@ int main(){
         }
     }
 
-    printf("a media dos elementos e %d",media);
+    printf("a media dos elementos e %.2f",media);
 
 return 0;
 }
