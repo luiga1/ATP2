@@ -62,7 +62,7 @@ void print_matriz(int linha, int coluna, int** matriz){
 }
 
 void cria_matriz_rand(int linha, int coluna, int** matriz){
-
+    srand(time(0));
     for(int i=0;i<linha;i++){
         for(int j=0;j<coluna;j++){
             matriz[i][j] = rand()%6;
