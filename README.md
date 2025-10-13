@@ -52,6 +52,7 @@ lista 3
     -Structs 
     -Typedef
     -Operadores de structs
+    -Ponteiros em structs
 
 lista 4
 
