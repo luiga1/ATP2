@@ -23,7 +23,7 @@ int main(){
 
     //procura
     while(fscanf(arq,"%c",&c) != EOF){
-        //procurar se as letras são exatamenta a mesma coisa
+        //procurar se as letras sao exatamenta a mesma coisa
         if(find == c){
             letra++;
         }
