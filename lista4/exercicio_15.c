@@ -20,13 +20,12 @@ int main(){
     Aluno entrada;
     int i=-1;
 
-    arq = fopen("arquivob4.bin","w+b");
+    arq = fopen("arquivob4.bin","r+b");
 
     while(i!=0){
 
         printf("Digite sua escolha\n1- Criar arquivo\n2- Trocar aluno\n3- mostrar arquivo\n0- Sair\n");
         scanf("%d",&i);
-        fseek(arq,0,SEEK_SET);
         if(i == 1) fscanAluno(arq);
         else if(i == 2) trocaAluno(arq);
         else if(i==3) printArq(arq);
@@ -39,10 +38,14 @@ return 0;
 }
 
 void printArq(FILE *arq){
+
     Aluno temp;
-    while(!feof(arq)){
-        fread(&temp,sizeof(Aluno),1,arq);
-        printf("Ra: %d\nAluno: %s\nNota: %f\n",temp.ra,temp.nome,temp.nota);
+
+    fseek(arq,0,SEEK_SET);
+
+    while(fread(&temp,sizeof(Aluno),1,arq) ==1 ){
+
+        printf("Ra: %d\nAluno: %s\nNota: %f\n", temp.ra, temp.nome, temp.nota);
     }
 
     fseek(arq,0,SEEK_SET);
@@ -53,7 +56,7 @@ void fscanAluno(FILE* arq){
     Aluno entrada;
 
     printf("Digite quantos alunos serao cadastrados ");
-    scanf("%s",&n);
+    scanf("%d",&n);
 
     while(i<n){
         printf("Digite o ra ");
@@ -98,7 +101,6 @@ void trocaAluno(FILE* arq){
     char nome[30];
     Aluno novo;
     Aluno temp;
-    int i=0;
 
     printf("digite o nome do aluno que vai ser trocado ");
     scanf("%s",nome);
@@ -106,14 +108,12 @@ void trocaAluno(FILE* arq){
     printf("Digite as novas entradas\n");
     novo = scanAluno();
 
-    while(!feof(arq)){
-        fread(&temp,s,1,arq);
+    while(fread(&temp,s,1,arq) == 1){
         if(compAluno(nome,temp)== 0){
             //trocar as infos
-            fseek(arq,i*s,SEEK_SET);
+            fseek(arq,-s,SEEK_CUR);
             fwrite(&novo,s,1,arq);
         }
-        i++;
     }
 
     //reseta o ponteiro do arquivo para a proxima função
