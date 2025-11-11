@@ -17,7 +17,6 @@ void printArq(FILE *arq);
 
 int main(){
     FILE *arq;
-    Aluno entrada;
     int i=-1;
 
     arq = fopen("arquivob4.bin","r+b");
@@ -72,7 +71,7 @@ void fscanAluno(FILE* arq){
 
         i++;
     }
-    //reseta o ponteiro do arquivo para a proxima função
+    //reseta o ponteiro do arquivo para a proxima funï¿½ï¿½o
     fseek(arq,0,SEEK_SET);
 }
 
@@ -116,6 +115,6 @@ void trocaAluno(FILE* arq){
         }
     }
 
-    //reseta o ponteiro do arquivo para a proxima função
+    //reseta o ponteiro do arquivo para a proxima funï¿½ï¿½o
     fseek(arq,0,SEEK_SET);
 }
